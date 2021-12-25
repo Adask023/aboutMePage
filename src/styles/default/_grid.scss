@@ -28,7 +28,7 @@ $layout-values: flex-start, flex-end, center, space-between, space-around;
 
 // grid gaps
 // margin left and right resets the padding on the left and right sides
-// use: grid-gap-1
+// use: gap-1
 @each $key, $val in $grid-gaps {
   .gap-#{$key} > * {
     padding: $val;

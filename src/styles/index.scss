@@ -1,5 +1,6 @@
 // variables & functions
 @import "default/variables";
+@import "default/utilities";
 
 // base & layout
 @import "default/base";
@@ -8,3 +9,9 @@
 
 // colors
 @import "default/colors";
+
+// components
+@import "components/navbar";
+@import "components/hero";
+@import "components/aboutme";
+@import "components/skills";

@@ -1,0 +1,13 @@
+.hero__img {
+  min-height: 60vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .hero__text {
+    // position: absolute;
+    z-index: 2;
+  }
+  img {
+    position: relative;
+  }
+}

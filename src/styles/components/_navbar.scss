@@ -1,0 +1,16 @@
+.navbar {
+  box-shadow: 1px 3px 5px rgb(0 0 0 / 10%);
+  padding: 0.75rem 1.5rem;
+  // position: fixed;
+  // width: 100%;
+  // z-index: 99;
+  div {
+    ul {
+      li {
+        a {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
