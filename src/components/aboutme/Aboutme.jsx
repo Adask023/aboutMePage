@@ -2,7 +2,7 @@ import React from "react";
 
 export const Aboutme = () => {
   return (
-    <section className="mt-4">
+    <section id="aboutme" className="mt-4">
       <div className="container">
         <div className="font-xl mt-2 mb-4">About me</div>
         <div className="row justify-space-between">

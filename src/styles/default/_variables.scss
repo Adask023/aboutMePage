@@ -1,15 +1,28 @@
 // colors palette
-$primary: #326dee;
-$secondary: #1ac886;
-$third: #111111;
+// $primary: #326dee;
+// $secondary: #1ac886;
+// $third: #111111;
+// $error: #d32752;
+// $info: #f6c31c;
+
+// main colors
+$primary: #7D6D61;
+$secondary: #B2A094;
+$third: #FFEACE;
+$fourth: #00C9AD;
+// $black: ;
+// $white: ;
+
 $error: #d32752;
 $info: #f6c31c;
+
 
 // color palette
 $colors: (
   "primary": $primary,
   "secondary": $secondary,
   "third": $third,
+  "fourth": $fourth,
   "error": $error,
   "info": $info,
 );
