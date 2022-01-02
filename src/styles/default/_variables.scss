@@ -6,16 +6,18 @@
 // $info: #f6c31c;
 
 // main colors
-$primary: #7D6D61;
-$secondary: #B2A094;
-$third: #FFEACE;
-$fourth: #00C9AD;
-// $black: ;
-// $white: ;
+$primary: #7d6d61;
+$secondary: #b2a094;
+$third: #ffeace;
+$fourth: #00c9ad;
 
+$white: white;
+$gray-light: #252934;
+$gray-dark: #1b242f;
+// $gray-light: #286074;
+// $gray-dark: #2f4858;
 $error: #d32752;
 $info: #f6c31c;
-
 
 // color palette
 $colors: (
@@ -23,10 +25,12 @@ $colors: (
   "secondary": $secondary,
   "third": $third,
   "fourth": $fourth,
+  "gray-light": $gray-light,
+  "gray-dark": $gray-dark,
+  "white": $white,
   "error": $error,
   "info": $info,
 );
-
 
 // spacing
 $base-padding: 0.75rem;

@@ -55,7 +55,7 @@ function Item({ item }) {
 
   return (
     <motion.li
-      className="row skills_item mb-1"
+      className="skills_item mb-1"
       layout
       onClick={toggleOpen}
       ref={ref}
@@ -72,6 +72,7 @@ function Item({ item }) {
           {item.level}%
         </motion.div>
       </motion.div>
+
       <AnimatePresence>
         {isOpen && <Content name={item?.name} icon={item?.icon} />}
       </AnimatePresence>
