@@ -19,7 +19,9 @@ export const Navbar = () => {
             </Link>
           </li>
           <li className="ml-1 text-hover-fourth">
-            <a href="#skills">Skills</a>
+            <Link href="#skills" to="skills" smooth={true}>
+              Skills
+            </Link>
           </li>
           <li className="ml-1 text-hover-fourth">
             <a href="#contact">Contact</a>
