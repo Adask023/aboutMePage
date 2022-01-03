@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-scroll";
+import { useViewportScroll } from "framer-motion";
 
 export const Navbar = () => {
   return (
-    <nav id="nav" className="navbar">
+    <nav id="nav" className="navbar bg-white">
       <div className="container row justify-space-between">
         <ul className="row">
           <li className="ml-1 mr-1">
-            <a href="#nav">Adam Kudłacik</a>
+            <Link href="#nav" to="nav">
+              Adam Kudłacik
+            </Link>
           </li>
           |
           <li className="ml-1 text-hover-fourth">
-            <a href="#home">Home</a>
+            <Link href="#home" to="nav">
+              Home
+            </Link>
           </li>
           <li className="ml-1 text-hover-fourth">
             <Link href="#about" to="aboutme" smooth={true}>

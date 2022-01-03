@@ -1,0 +1,22 @@
+.contact_form__wrapper {
+  form {
+    input,
+    textarea {
+      padding: $base-padding;
+      border-radius: $base-border-radius;
+      width: 100%;
+      outline: none;
+    }
+    textarea {
+      resize: none;
+      overflow: auto;
+    }
+    .contact_submit__buttton {
+      padding: $base-padding/2 $base-padding;
+      border-radius: $base-border-radius;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}
