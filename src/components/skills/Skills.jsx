@@ -11,9 +11,9 @@ import { useInView } from "react-intersection-observer";
 
 export const Skills = () => {
   return (
-    <section id="skills" className="mt-4">
+    <section id="skills" className="mt-4 pb-4">
       <div className="container">
-        <div className="font-xl mt-2 mb-4">Skills</div>
+        <div className="font-xl pt-4 mb-4">Skills</div>
         <AnimateSharedLayout>
           <motion.ul
             className="skills__list"
@@ -47,6 +47,7 @@ function Item({ item }) {
       scale: 1,
       transition: {
         duration: 0.5,
+        delay: 0.4,
       },
     },
   };
@@ -55,7 +56,7 @@ function Item({ item }) {
 
   return (
     <motion.li
-      className="skills_item mb-1"
+      className="skills_item mb-1 bg-white"
       layout
       onClick={toggleOpen}
       ref={ref}
@@ -63,11 +64,17 @@ function Item({ item }) {
       animate={controls}
       variants={itemVariants}
     >
-      <motion.div className="col-12-xs skills_item__row">
-        <motion.div className="skills_item__icon font-xxl mr-2" layout>
+      <motion.div className="col-12-xs skills_item__row" layout>
+        <motion.div className="skills_item__icon font-xxl mr-2">
           <i className={`${item?.iconClass}`}></i>
         </motion.div>
-        <motion.div className="skills_item__progress_bar"></motion.div>
+        <motion.div className="skills_item__progress_bar">
+          <div
+            initial={{ x: -100 }}
+            animate={{ x: `${item?.level}` }}
+            className="bar"
+          ></div>
+        </motion.div>
         <motion.div className="skills_item__progress_number font-lg ml-2">
           {item.level}%
         </motion.div>

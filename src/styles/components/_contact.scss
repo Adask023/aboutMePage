@@ -1,10 +1,11 @@
 .contact_form__wrapper {
+  box-sizing: border-box;
   form {
     input,
     textarea {
       padding: $base-padding;
       border-radius: $base-border-radius;
-      width: 100%;
+      width: calc(100% - ($base-padding * 2) - 4px);
       outline: none;
     }
     textarea {

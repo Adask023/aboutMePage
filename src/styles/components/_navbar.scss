@@ -9,10 +9,30 @@
   // z-index: 99;
   div {
     ul {
+      .burger_menu__icon {
+        cursor: pointer;
+      }
       li {
         a {
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  ul.mobile_nav {
+    .close_nav__button {
+      text-align: right;
+    }
+    li {
+      i {
+        cursor: pointer;
+      }
+      a {
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        text-align: center;
       }
     }
   }

@@ -1,34 +1,46 @@
-.skills__list {
-  .skills_item {
-    padding: $base-padding;
-    box-shadow: $base-box-shadow;
-    border-radius: $base-border-radius;
-    cursor: pointer;
-
-    &:hover {
-      box-shadow: $big-box-shadow;
-    }
-    &__row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      // height: 100px;
-    }
-    &__icon {
+#skills {
+  background-color: rgb(243, 243, 243);
+  .skills__list {
+    .skills_item {
       padding: $base-padding;
-    }
-    &__progress_bar {
-      display: block;
+      box-shadow: $base-box-shadow;
       border-radius: $base-border-radius;
-      background: gray;
-      height: 40px;
-      // width: 20px;
-      flex-grow: 1;
-    }
+      cursor: pointer;
 
-    &__progress_number {
-      padding: $base-padding;
+      &:hover {
+        box-shadow: $big-box-shadow;
+      }
+      &__row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+      }
+      &__icon {
+        padding: $base-padding;
+      }
+      &__progress_bar {
+        display: block;
+        border-radius: $base-border-radius;
+        background: gray;
+        height: 40px;
+        // width: 20px;
+        flex-grow: 1;
+        position: relative;
+        overflow: hidden;
+        .bar{
+          position: absolute;
+          display: block;
+          background-color: $fourth;
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      &__progress_number {
+        padding: $base-padding;
+      }
     }
   }
 }
