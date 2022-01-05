@@ -1,9 +1,20 @@
 export const items = [
   {
+    id: "2",
+    name: "HTML",
+    level: 80,
+    iconClass: "fab fa-html5",
+  },
+  {
+    id: "3",
+    name: "CSS",
+    level: 75,
+    iconClass: "fab fa-css3",
+  },
+  {
     id: "1",
-    icon: "icon-here",
-    name: "React",
-    level: 65,
+    name: "JavaScript & React.JS",
+    level: 70,
     iconClass: "fab fa-react",
     content: [
       {
@@ -19,15 +30,9 @@ export const items = [
     ],
   },
   {
-    id: "2",
-    iconClass: "fab fa-react",
-    name: "JavaScript",
-    level: 65,
-  },
-  {
-    id: "3",
-    iconClass: "fab fa-react",
-    name: "HTML",
-    level: 65,
+    id: "4",
+    name: "Wordpress",
+    level: 85,
+    iconClass: "fab fa-wordpress",
   },
 ];

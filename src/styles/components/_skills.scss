@@ -6,6 +6,7 @@
       box-shadow: $base-box-shadow;
       border-radius: $base-border-radius;
       cursor: pointer;
+      position: relative;
 
       &:hover {
         box-shadow: $big-box-shadow;
@@ -29,7 +30,7 @@
         flex-grow: 1;
         position: relative;
         overflow: hidden;
-        .bar{
+        .bar {
           position: absolute;
           display: block;
           background-color: $fourth;
@@ -40,6 +41,12 @@
 
       &__progress_number {
         padding: $base-padding;
+      }
+      .skills__open_arrow {
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
     }
   }
