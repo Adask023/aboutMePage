@@ -1,6 +1,14 @@
 // box-shadow: 1px 3px 5px rgb(0 0 0 / 10%);
-.about_me__photo {
-  box-shadow: $base-box-shadow;
-  border-radius: $base-border-radius;
-  overflow: hidden;
+
+
+#aboutme {
+
+
+  .about_me__photo {
+    box-shadow: $base-box-shadow;
+    border-radius: $base-border-radius;
+    overflow: hidden;
+  }
 }
+
+

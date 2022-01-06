@@ -113,7 +113,14 @@ function Item({ item }) {
       </motion.div>
 
       <AnimatePresence>
-        {isOpen && <Content name={item?.name} icon={item?.icon} />}
+        {isOpen && (
+          <Content
+            name={item?.name}
+            icon={item?.icon}
+            description={item?.description}
+            content={item?.content}
+          />
+        )}
       </AnimatePresence>
       <motion.div className="skills__open_arrow">
         <motion.i
@@ -126,7 +133,7 @@ function Item({ item }) {
   );
 }
 
-function Content({ name, icon }) {
+function Content({ name, icon, description, content }) {
   return (
     <motion.div
       layout
@@ -137,13 +144,24 @@ function Content({ name, icon }) {
     >
       <div className="skills_item__content p-1">
         <div className="font-xl">{name}</div>
+        <div className="pb-1">{description}</div>
         <div>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-          aliquam iusto tempore veritatis, consectetur nostrum harum, sequi
-          recusandae animi voluptatem ab officia. Fugiat alias illum maxime
-          temporibus earum obcaecati ad.
+          {content?.map((contentItem) => {
+            return (
+              <div className="pl-2" key={contentItem.id}>
+                <div className="font-lg">
+                  <span className="font-md pr-1">
+                    <i class="fas fa-check"></i>
+                  </span>
+                  {contentItem.contentName}
+                  <span className="font-md pl-1">
+                    - {contentItem.contentDescription}
+                  </span>
+                </div>
+              </div>
+            );
+          })}
         </div>
-        <div>{icon}</div>
       </div>
     </motion.div>
   );

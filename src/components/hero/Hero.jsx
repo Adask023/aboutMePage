@@ -13,12 +13,12 @@ export const Hero = () => {
     >
       <div className="container hero__text">
         <div className="row">
-          <div className="pl-2 mt-5 col-12-xs col-8-md">
+          <div className="pl-4 col-12-xs">
             <motion.h1
               initial={{ x: -100, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="font-xl"
+              className="font-xxl"
             >
               Hello
             </motion.h1>
