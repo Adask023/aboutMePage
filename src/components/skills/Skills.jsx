@@ -82,7 +82,7 @@ function Item({ item }) {
 
   return (
     <motion.li
-      className="skills_item mb-1 bg-white"
+      className="skills_item mb-2 bg-white"
       layout
       onClick={toggleOpen}
       ref={ref}
@@ -124,8 +124,8 @@ function Item({ item }) {
       </AnimatePresence>
       <motion.div className="skills__open_arrow">
         <motion.i
+          layout
           animate={{ rotate: isOpen ? 180 : 0 }}
-          transition={{ delay: 0.6 }}
           class="fas fa-chevron-down"
         ></motion.i>
       </motion.div>
@@ -142,9 +142,9 @@ function Content({ name, icon, description, content }) {
       exit={{ opacity: 0 }}
       transition={{ delay: 0.2 }}
     >
-      <div className="skills_item__content p-1">
+      <div className="skills_item__content p-1 pb-2">
         <div className="font-xl">{name}</div>
-        <div className="pb-1">{description}</div>
+        <div className="pb-2">{description}</div>
         <div>
           {content?.map((contentItem) => {
             return (

@@ -54,7 +54,7 @@ export const Aboutme = () => {
               initial="hidden"
               animate={controls}
               className="about_me__photo"
-              src="/img/AK_CV_Photo.jpg"
+              src="./img/AK_CV_Photo.jpg"
               alt=""
             />
           </div>

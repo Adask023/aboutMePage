@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const WorksItem = ({ workItem }) => {
   return (
     <div key={workItem.id} className="col-4-xl col-6-md col-12-xs">
-      <Link to={workItem.subpageLink}>
+      <a href={workItem.subpageLink}>
         <motion.div
           whileHover={{
             scale: 1.05,
@@ -20,7 +20,7 @@ const WorksItem = ({ workItem }) => {
           </div>
           <div className="works__item_text font-lg">{workItem.projectName}</div>
         </motion.div>
-      </Link>
+      </a>
     </div>
   );
 };

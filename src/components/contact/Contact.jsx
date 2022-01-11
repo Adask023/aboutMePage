@@ -8,13 +8,23 @@ export const Contact = () => {
   };
 
   return (
-    <section className="bg-gray-light mt-4">
+    <section id="contact" className="bg-gray-light mt-4">
       <div className="container">
         <div class="font-xl pt-4 pb-2 text-white">Contact me!</div>
         <div className="row justify-center">
-          <div className="col-12-xs col-6-md pb-4">
+          <div className="col-12-xs justify-center p-3">
+            {/* <div className="col-12-xs col-6-md pb-4"> */}
             <div className="contact_form__wrapper p-2 ">
-              <form>
+              <div className="font-xxl text-white">
+                Contact me via{" "}
+                <a
+                  href="https://www.linkedin.com/in/adam-kud%C5%82acik/"
+                  className="text-fourth text-hover-primary"
+                >
+                  LinkedIn
+                </a>
+              </div>
+              {/* <form>
                 <input className="mb-1" placeholder="name..." type="text" />
                 <input className="mb-2" placeholder="email..." type="mail" />
                 <textarea
@@ -30,7 +40,7 @@ export const Contact = () => {
                 >
                   Send
                 </motion.button>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>

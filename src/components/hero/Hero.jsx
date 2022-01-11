@@ -5,11 +5,9 @@ import { Link } from "react-scroll";
 export const Hero = () => {
   return (
     <motion.div
-      initial={{opacity: 0.4}}
-      animate={{opacity: 1}}
-      transition={{duration: 0.5}}
+      id="hero"
       className="hero__img"
-      style={{ backgroundImage: "url(/img/hero-photo.jpg)" }}
+      style={{ backgroundImage: "url(./img/hero-photo.jpg)" }}
     >
       <div className="container hero__text">
         <div className="row">
@@ -44,7 +42,17 @@ export const Hero = () => {
       </div>
       <div className="arrow font-xl text-hover-fourth">
         <Link href="#about" to="aboutme" smooth={true}>
-          <i class="fas fa-arrow-circle-down"></i>
+          <motion.i
+            initial={{ y: 0 }}
+            animate={{ y: -30 }}
+            transition={{
+              repeat: Infinity,
+              duration: 1,
+              repeatType: "reverse",
+              ease: [0.1, 0.3, 0.6, 1],
+            }}
+            class="fas fa-arrow-circle-down"
+          ></motion.i>
         </Link>
       </div>
     </motion.div>

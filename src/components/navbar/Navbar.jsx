@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { useViewportScroll } from "framer-motion";
 
 export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -32,28 +31,35 @@ export const Navbar = () => {
           {!isMobile ? (
             <>
               <li className="ml-1 mr-1">
-                <Link href="#nav" to="nav">
+                <Link href="#hero" to="hero" smooth>
                   Adam Kudłacik
                 </Link>
               </li>
               |
               <li className="ml-1 text-hover-fourth">
-                <Link href="#home" to="nav">
+                <Link href="#hero" to="hero" smooth>
                   Home
                 </Link>
               </li>
               <li className="ml-1 text-hover-fourth">
-                <Link href="#about" to="aboutme" smooth={true}>
+                <Link href="#about" to="aboutme" smooth>
                   About
                 </Link>
               </li>
               <li className="ml-1 text-hover-fourth">
-                <Link href="#skills" to="skills" smooth={true}>
+                <Link href="#skills" to="skills" smooth>
                   Skills
                 </Link>
               </li>
               <li className="ml-1 text-hover-fourth">
-                <Link href="#contact">Contact</Link>
+                <Link href="#projects" to="projects" smooth>
+                  Projects
+                </Link>
+              </li>
+              <li className="ml-1 text-hover-fourth">
+                <Link href="#contact" to="contact" smooth>
+                  Contact
+                </Link>
               </li>
             </>
           ) : (
@@ -85,14 +91,18 @@ export const Navbar = () => {
         <>
           <ul className="mobile_nav pt-2">
             <li className="close_nav__button p-1 font-xl">
-              <i onClick={toggleMobileNav} class="fas fa-times text-hover-fourth p-1"></i>
+              <i
+                onClick={toggleMobileNav}
+                class="fas fa-times text-hover-fourth p-1"
+              ></i>
             </li>
             <li className="p-1 text-hover-fourth">
               <Link
                 onClick={toggleMobileNav}
                 className="p-1"
-                href="#home"
-                to="nav"
+                href="#hero"
+                to="hero"
+                smooth
               >
                 Home
               </Link>
@@ -103,7 +113,7 @@ export const Navbar = () => {
                 className="p-1"
                 href="#about"
                 to="aboutme"
-                smooth={true}
+                smooth
               >
                 About
               </Link>
@@ -114,13 +124,30 @@ export const Navbar = () => {
                 className="p-1"
                 href="#skills"
                 to="skills"
-                smooth={true}
+                smooth
               >
                 Skills
               </Link>
             </li>
             <li className="p-1 text-hover-fourth">
-              <Link onClick={toggleMobileNav} className="p-1" href="#contact">
+              <Link
+                onClick={toggleMobileNav}
+                className="p-1"
+                href="#projects"
+                to="projects"
+                smooth
+              >
+                Projects
+              </Link>
+            </li>
+            <li className="p-1 text-hover-fourth">
+              <Link
+                onClick={toggleMobileNav}
+                className="p-1"
+                href="#contact"
+                to="contact"
+                smooth
+              >
                 Contact
               </Link>
             </li>
