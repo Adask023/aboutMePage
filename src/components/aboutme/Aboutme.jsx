@@ -74,10 +74,7 @@ export const Aboutme = () => {
               animate={controls}
               className="mt-1 mb-1"
             >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad
-              quisquam provident dolore, pariatur ipsam aperiam repellendus sit
-              asperiores nihil inventore amet voluptas autem cum eveniet vel
-              recusandae mollitia, sed debitis?
+              I am a person who learns quickly and willingly. I try to gain new knowledge everyday. When I lack the skills necessary to achieve my goals, I do everything I can to improve and learn. I work well in a team but also on my own.
             </motion.p>
           </div>
         </div>

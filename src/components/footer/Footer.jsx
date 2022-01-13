@@ -9,10 +9,16 @@ export const Footer = () => {
             Adam Kudłacik &#169;2022 - Web development
           </div>
           <div className="col-12-sm col-2-md text-white">
-            <a className="text-hover-fourth mr-1" href="">
+            <a
+              href="https://github.com/Adask023"
+              className="text-hover-fourth mr-1"
+            >
               github
             </a>
-            <a className="text-hover-fourth mr-1" href="">
+            <a
+              href="https://www.linkedin.com/in/adam-kud%C5%82acik/"
+              className="text-hover-fourth mr-1"
+            >
               linkedIn
             </a>
           </div>

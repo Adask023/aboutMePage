@@ -5,7 +5,8 @@ import { BankAccountPage } from "./pages/projects/BankAccountPage";
 
 function App() {
   return (
-    <BrowserRouter basename={window.location.pathname || ''}>
+    // <BrowserRouter basename={window.location.pathname || ''}>
+    <BrowserRouter>
       <div className="App">
         <Routes>
           <Route path="/" element={<Homepage />} />
