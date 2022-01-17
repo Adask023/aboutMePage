@@ -12,7 +12,8 @@ export const items = [
     name: "CSS & Styles",
     level: 75,
     iconClass: "fab fa-css3",
-    description: "",
+    description:
+      "A style sheet language used for describing the presentation of a document written in a markup language such as HTML.",
     content: [
       {
         id: "31",
@@ -47,7 +48,8 @@ export const items = [
       {
         id: "12",
         contentName: "Type Script",
-        contentDescription: "It is a strict syntactical superset of JavaScript and adds optional static typing to the language.",
+        contentDescription:
+          "It is a strict syntactical superset of JavaScript and adds optional static typing to the language.",
       },
       {
         id: "13",
@@ -57,7 +59,8 @@ export const items = [
       {
         id: "14",
         contentName: "Redux",
-        contentDescription: "Library for managing and centralizing application state",
+        contentDescription:
+          "Library for managing and centralizing application state",
       },
       {
         id: "14",
@@ -71,5 +74,14 @@ export const items = [
     name: "Wordpress",
     level: 85,
     iconClass: "fab fa-wordpress",
+    description:
+      "A free and open-source content management system (CMS) written in PHP and paired with a MySQL or MariaDB database.",
+    content: [
+      {
+        id: "41",
+        contentName: "WooCommerce",
+        contentDescription: "Open-source eCommerce solution for wordpress",
+      },
+    ],
   },
 ];

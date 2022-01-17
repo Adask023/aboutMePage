@@ -12,6 +12,9 @@
       resize: none;
       overflow: auto;
     }
+    .error_message {
+      color: #ff7373;
+    }
     .contact_submit__buttton {
       padding: $base-padding/2 $base-padding;
       border-radius: $base-border-radius;

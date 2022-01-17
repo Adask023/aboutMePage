@@ -1,17 +1,20 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
+import validate from "./formSchema";
 
 export const Contact = () => {
   const form = useRef();
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
+  function handleFormSubmit(values) {
+    console.log(values);
+
     emailjs
       .sendForm(
         process.env.REACT_APP_SERVICE_ID,
         process.env.REACT_APP_TEMPLATE_ID,
-        form.current,
+        values,
         process.env.REACT_APP_USER_ID
       )
       .then(
@@ -22,8 +25,28 @@ export const Contact = () => {
           console.log(error.text);
         }
       );
-    e.target.reset();
-  };
+
+    console.log("wysłano");
+    // e.target.reset();
+  }
+
+  const formik = useFormik({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema: validate,
+    onSubmit: ({ resetForm }) => {
+      console.log("form submitting");
+
+      handleFormSubmit(form.current);
+      resetForm();
+      console.log("after reset");
+      // actions.setSubmitting(false);
+      // setTimeout(() => {}, 1000);
+    },
+  });
 
   return (
     <section id="contact" className="bg-gray-light mt-4">
@@ -42,32 +65,64 @@ export const Contact = () => {
         <div className="row justify-center">
           <div className="col-12-xs col-6-md pb-4">
             <div className="contact_form__wrapper p-2 ">
-              <form ref={form} onSubmit={(e) => handleFormSubmit(e)}>
+              <form
+                ref={form}
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  formik.handleSubmit();
+                  formik.resetForm();
+                }}
+              >
                 <input
-                  className="mb-1"
+                  className="mt-2"
                   placeholder="name..."
                   type="text"
                   name="name"
+                  id="name"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.name}
                 />
+                {formik.errors.name && formik.touched.name ? (
+                  <div className="error_message font-sm">
+                    {formik.errors.name}
+                  </div>
+                ) : null}
                 <input
-                  className="mb-2"
+                  className="mt-1"
                   placeholder="email..."
                   type="mail"
                   name="email"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.email}
                 />
+                {formik.errors.email && formik.touched.email ? (
+                  <div className="error_message font-sm">
+                    {formik.errors.email}
+                  </div>
+                ) : null}
                 <textarea
-                  className="mb-2"
+                  className="mt-2"
                   placeholder="message..."
                   type="box"
                   rows="8"
                   name="message"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.message}
                 />
-                <motion.button
-                  className="contact_submit__buttton bg-fourth font-md"
+                {formik.errors.message && formik.touched.message ? (
+                  <div className="error_message font-sm">
+                    {formik.errors.message}
+                  </div>
+                ) : null}
+                <button
+                  className="contact_submit__buttton bg-fourth font-md mt-1"
                   type="submit"
                 >
                   Send
-                </motion.button>
+                </button>
               </form>
             </div>
           </div>

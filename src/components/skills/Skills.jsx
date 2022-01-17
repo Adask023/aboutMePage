@@ -140,7 +140,7 @@ function Content({ name, icon, description, content }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.1 }}
     >
       <div className="skills_item__content p-1 pb-2">
         <div className="font-xl">{name}</div>
