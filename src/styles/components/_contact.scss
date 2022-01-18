@@ -22,5 +22,14 @@
       font-weight: bold;
       cursor: pointer;
     }
+
+    .send_info {
+      color: #00c9ad;
+    }
+
+    .button_loading {
+      opacity: 60%;
+      cursor: not-allowed;
+    }
   }
 }

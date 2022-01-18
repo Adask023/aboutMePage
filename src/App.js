@@ -2,6 +2,7 @@ import { Homepage } from "./pages/Homepage";
 import "./styles/index.scss";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { BankAccountPage } from "./pages/projects/BankAccountPage";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 function App() {
   return (

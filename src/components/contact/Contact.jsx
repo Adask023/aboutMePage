@@ -1,13 +1,19 @@
-import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Formik, Form, Field, ErrorMessage, useFormik } from "formik";
 import validate from "./formSchema";
+import { useFormik } from "formik";
+import { TailSpin } from "react-loader-spinner";
+import { motion } from "framer-motion";
 
 export const Contact = () => {
+  // hooks
   const form = useRef();
+  const [sendInfo, setSendInfo] = useState("");
+  const [sendLoading, setSendLoading] = useState(false);
 
+  // functions
   function handleFormSubmit(values) {
+    setSendLoading(true);
     console.log(values);
 
     emailjs
@@ -17,14 +23,19 @@ export const Contact = () => {
         values,
         process.env.REACT_APP_USER_ID
       )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+      .then((result) => {
+        console.log(result.text);
+        formik.resetForm();
+        setSendInfo("Thank you, email was send.");
+        setSendLoading(false);
+      })
+      .catch((error) => {
+        console.log(error.text);
+        setSendInfo(
+          "Sending Error, contact me directly kudlacik.dev@gmail.com"
+        );
+        setSendLoading(false);
+      });
 
     console.log("wysłano");
     // e.target.reset();
@@ -37,14 +48,8 @@ export const Contact = () => {
       message: "",
     },
     validationSchema: validate,
-    onSubmit: ({ resetForm }) => {
-      console.log("form submitting");
-
+    onSubmit: () => {
       handleFormSubmit(form.current);
-      resetForm();
-      console.log("after reset");
-      // actions.setSubmitting(false);
-      // setTimeout(() => {}, 1000);
     },
   });
 
@@ -69,8 +74,8 @@ export const Contact = () => {
                 ref={form}
                 onSubmit={(e) => {
                   e.preventDefault();
+                  setSendInfo("");
                   formik.handleSubmit();
-                  formik.resetForm();
                 }}
               >
                 <input
@@ -117,12 +122,34 @@ export const Contact = () => {
                     {formik.errors.message}
                   </div>
                 ) : null}
-                <button
-                  className="contact_submit__buttton bg-fourth font-md mt-1"
-                  type="submit"
-                >
-                  Send
-                </button>
+                <div className="row">
+                  <motion.button
+                    className={`contact_submit__buttton bg-fourth font-md mt-1 ${
+                      sendLoading ? "button_loading" : null
+                    }`}
+                    type="submit"
+                    disabled={sendLoading}
+                    whileHover={
+                      !sendLoading && {
+                        scale: 1.05,
+                        transition: { duration: 0.2 },
+                      }
+                    }
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    Send
+                  </motion.button>
+                  {sendLoading && (
+                    <div className="pt-1 pl-1">
+                      <TailSpin color="#00c9ad" height={30} width={30} />
+                    </div>
+                  )}
+
+                  {}
+                  {sendInfo && (
+                    <div className="pt-1 pl-1 send_info">{sendInfo}</div>
+                  )}
+                </div>
               </form>
             </div>
           </div>
@@ -131,30 +158,3 @@ export const Contact = () => {
     </section>
   );
 };
-
-// export const Contact = () => {
-//   return (
-//     <section className="bg-gray-light mt-4">
-//       <div className="container">
-//         <div class="font-xl pt-2 mb-4 text-white">Contact me</div>
-//         <div className="row justify-center">
-//           <img
-//             src="/img/thinking.png"
-//             alt=""
-//             className="col-12-xs col-3-md pl-2 pr-2"
-//           />
-//           <div className="col-12-xs col-6-md">
-//             <div className="contact_form__wrapper p-2 ">
-//               <form>
-//                 <input type="text" />
-//                 <input type="mail" />
-//                 <input type="box" />
-//                 <button className="bg-fourth font-lg " type="submit"> Send</button>
-//               </form>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
